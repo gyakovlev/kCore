@@ -47,14 +47,14 @@ local ctor = function( self, baseCtor )
 	self.overlayFrame = overlayFrame;
 	
 	local count = FontString( self );
-	count:SetFont( self.font, self.fontSize, self.fontStyle );
-	count:SetPoint( "BOTTOMRIGHT", self, "BOTTOMRIGHT", -1, 2 );
+	count:SetFont( self.font, self.fontSize, self.fontStyle ); --count:SetFont( self.font, self.fontSize, self.fontStyle );
+	count:SetPoint( "BOTTOMRIGHT", self, "BOTTOMRIGHT", -1, 2 );  --count:SetPoint( "BOTTOMRIGHT", self, "BOTTOMRIGHT", -1, 2 );
 	count:SetDrawLayer( "OVERLAY" );
 	count:SetParent( overlayFrame );
 	self.count = count;
 	
 	-- cooldown text will be added at some point
-	self.cooldown.noOCC = true;
+	self.cooldown.noOCC = false; --true
 end
 
 kWidgets.AuraIcon, Base = kCore.CreateClass( ctor, {
